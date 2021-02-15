@@ -1,7 +1,7 @@
 """
 Current Objective: change map from minterms
 
-samplemap = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
+samplemap = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ']]
 
 """
 
@@ -20,6 +20,10 @@ def displaymap(kmap):
             print(j, end=' | ')
         print('')
     print("-" * 17)
+
+
+def reset():
+    return [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ']]
 
 
 def indices():
@@ -44,14 +48,14 @@ def ass_minterms(kmap, minterm_list):
     for i in minterm_list:
 
         if i in cell_index[0]:
-            kmap[0][cell_index[0].index(i)] = 1
+            kmap[0][cell_index[0].index(i)] = '1'
         elif i in cell_index[1]:
-            kmap[1][cell_index[1].index(i)] = 1
+            kmap[1][cell_index[1].index(i)] = '1'
         elif i in cell_index[2]:
-            kmap[2][cell_index[2].index(i)] = 1
+            kmap[2][cell_index[2].index(i)] = '1'
         else:
-            kmap[3][cell_index[3].index(i)] = 1
+            kmap[3][cell_index[3].index(i)] = '1'
     return kmap
 
 
-displaymap(ass_minterms([[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]], [0, 3, 4, 7, 9, 12, 14]))
+displaymap(ass_minterms([[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ']], [0, 3, 4, 7, 9, 12, 14]))
